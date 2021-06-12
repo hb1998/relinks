@@ -1,6 +1,7 @@
 class RouteConstants {
     API = "/api";
-    LINK = this.API + "/link"
+    LINK = "/link";
+    URL = "/url*"
 }
 
 export const routeConstants = new RouteConstants();

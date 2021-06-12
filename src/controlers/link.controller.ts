@@ -1,19 +1,24 @@
-const bcrypt = require("bcrypt");
-require("../Node.Js-sample-project-structure/node_modules/dotenv").config();
-const jwt = require("jsonwebtoken");
-const User = require("../Models/user");
+import { Request, Response } from "express";
+import { getDestinationUrl } from "../utils/URLUtils";
+import { Link } from './../models/link.model';
 
-
-const createLink = (req, res, next) => {
-	
+const createLink = async (req: Request, res: Response) => {
+    const { sourceUrl } = req.body;
+    const destinationUrl = getDestinationUrl();
+    const link = new Link({
+        sourceUrl,
+        destinationUrl
+    })
+    await link.save();
+    return res.status(200).send(link)
 }
 
 
-const updateLink = (req, res, next) => {
+const updateLink = (req: Request, res: Response) => {
 
 }
 
-const deleteLink = (req, res, next) => {
+const deleteLink = (req: Request, res: Response) => {
 
 }
 

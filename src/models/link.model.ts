@@ -1,14 +1,15 @@
-import { model, Schema, Model, Document } from "mongoose";
+import { model, Schema, Document } from "mongoose";
 
-interface ILink extends Document {
-    source_url: string,
-    destination_url: string
+export interface ILink {
+    sourceUrl: string,
+    destinationUrl: string
 }
+interface ILinkModel extends Document, ILink { }
 
 
 const LinkSchema: Schema = new Schema({
-    source_url: { type: String, required: true },
-    destination_url: { type: String, required: true }
+    sourceUrl: { type: String, required: true },
+    destinationUrl: { type: String, required: true }
 });
 
-export const Link: Model<ILink> = model("Link", LinkSchema);
+export const Link = model<ILinkModel>("Link", LinkSchema);
