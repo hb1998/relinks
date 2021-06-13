@@ -34,6 +34,7 @@
     "chart.js": "^2.9.4",
     "clsx": "^1.1.1",
     "formik": "^2.1.5",
+    "geoip-lite": "^1.4.2",
     "history": "^5.0.0",
     "install": "^0.13.0",
     "lodash": "^4.17.19",

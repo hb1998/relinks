@@ -1,13 +1,16 @@
 import { Link } from './../models/link.model';
 import { Request, Response } from "express";
 import { Redis } from '../utils/redis';
+import { addHits } from '../utils/URLUtils';
 
 const handleUrl = async (req: Request, res: Response) => {
     try {
+        console.log(req)
         const destinationUrl = req.originalUrl.split('/')[2];
         const sourceUrl = await getSourceUrl(destinationUrl);
         if (sourceUrl) {
-            res.redirect(sourceUrl)
+            addHits(req);
+            res.redirect(sourceUrl);
         } else {
             res.status(500).send("Server Error")
         }
