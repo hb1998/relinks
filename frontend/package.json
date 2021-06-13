@@ -6,7 +6,7 @@
   "private": false,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "",
     "eject": "react-scripts eject"
   },
