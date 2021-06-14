@@ -5,7 +5,6 @@ import { addHits } from '../utils/URLUtils';
 
 const handleUrl = async (req: Request, res: Response) => {
     try {
-        console.log(req)
         const destinationUrl = req.originalUrl.split('/')[2];
         const sourceUrl = await getSourceUrl(destinationUrl);
         if (sourceUrl) {
