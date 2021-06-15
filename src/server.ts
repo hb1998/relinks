@@ -3,14 +3,9 @@ import mongoose from "mongoose";
 import { routeConstants } from './config/route.constants';
 import linkRoutes from "./routes/link.routes";
 import urlRoutes from "./routes/url.routes";
+import { getMongoDbUrl } from './utils/URLUtils';
 require('dotenv').config()
-const getMongoDbUrl = () => {
-    if (process.env.NODE_ENV === "production") {
-        return `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
-    } else {
-        return `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
-    }
-}
+
 
 mongoose
     .connect(getMongoDbUrl(), { useNewUrlParser: false })

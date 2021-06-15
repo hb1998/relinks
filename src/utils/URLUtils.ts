@@ -18,6 +18,14 @@ export const addHits = (req: Request) => {
     const originIP = req.get("origin");
 
     // const hit = new Hit({
-        
+
     // })
+}
+
+export const getMongoDbUrl = () => {
+    if (process.env.NODE_ENV === "production") {
+        return `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
+    } else {
+        return `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+    }
 }
