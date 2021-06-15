@@ -1,7 +1,7 @@
 class RouteConstants {
     API = "/api";
     LINK = "/link";
-    URL = "/url*"
+    URL = "/u*"
 }
 
 export const routeConstants = new RouteConstants();
