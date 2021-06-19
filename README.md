@@ -8,4 +8,4 @@ URL Click tracking service
 - [ ] B - custom domain integration for backend
 - [ ] BF - add demographics analytics
 - [x] B - implement redis as a cache
-- [ ] F - Do Landing page 
+- [x] F - Do Landing page 
